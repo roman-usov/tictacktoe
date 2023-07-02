@@ -42,7 +42,7 @@ const cells = [
 
 test.each(cells)('Row %s, column %s, set "%s"', async (row, column, symbol) => {
   const cellBeforeClick = getCell(row, column);
-  await userEvent.click(cellBeforeClick);
+  await userEvent.default.click(cellBeforeClick);
   const cellAfterClick = getCell(row, column);
   const regex = new RegExp(`^${symbol}$`);
   expect(cellAfterClick).toHaveTextContent(regex);

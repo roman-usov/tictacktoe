@@ -23,6 +23,7 @@
     "@testing-library/user-event": "^14.4.3",
     "parcel": "^2.9.3",
     "prettier": "2.8.8",
+    "process": "^0.11.10"
   },
   "author": "",
   "license": "ISC"

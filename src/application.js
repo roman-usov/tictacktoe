@@ -14,5 +14,29 @@ const generateField = () => {
 };
 
 // BEGIN (write your solution here)
+export default function playTickTackToe() {
+  const root = document.querySelector('.root');
+  root.append(generateField());
+  
+  const tableEl = document.querySelector('.table-bordered');
 
+  let nextValue = 'x';
+  
+  function play(e) {
+    const clickedEl = e.target;
+    
+    if (!clickedEl.matches('td')) return;
+    
+    const content = clickedEl.firstElementChild;
+    
+    if (content.classList.contains('invisible')) {
+      content.textContent = nextValue;
+      content.classList.remove('invisible');
+    }
+
+    nextValue = nextValue === 'x' ? 'o' : 'x';
+  }
+  
+  tableEl.addEventListener('click', play);
+}
 // END
